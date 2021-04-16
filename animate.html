@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kinect Typography</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- bootstrap  -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></link>
+    <!-- animate.css  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+	<!-- css style  -->
+	<link rel="stylesheet" href="style.css"></link>
+   <script src="animate.js">
+      </script>
+</head>
+	
+	
+<body onload="myFunction()">
+		<div class="mainscreen">
+		<h3>Kinect Typography</h3>
+		
+		<form name="editor">
+		<!-- div for display screen  -->
+		<div id="displayScreen" class="bScreen"><h2 id='editText'></h2></div>
+		<!-- text field  -->
+		<div class="idiv">
+		<input align="center" onkeyup="DisplayText()" type="text" id="text" name="text"  placeholder="Write Text">
+		</div>
+		
+		<!-- this div area contains all elements for editing the text  -->
+		<div class="allFields">
+		<div class="container">
+		<div class="row">
+        <div class="col">
+			<select class="box" id="animation" onfocusout="changeAnimation()">
+				<option value="bounce">bounce</option>
+                <option value="flash">flash</option>
+                <option value="pulse">pulse</option>
+				<option value="rubberBand">rubberBand</option>
+                <option value="shakeX">shakeX</option>              
+				<option value="swing">swing</option>
+                <option value="flip">flip</option>			
+                <option value="jello">jello</option>
+				<option value="hinge">hinge</option>
+                <option value="heartBeat">heartBeat</option>
+				<option value="rotateIn">rotateIn</option>				
+				<option value="bounceIn">bounceIn</option>
+                <option value="bounceInDown">bounceInDown</option>
+				<option value="bounceInLeft">bounceInLeft</option>
+                <option value="bounceOutDown">bounceOutDown</option>
+				<option value="fadeInTopLeft">fadeInTopLeft</option>
+                <option value="fadeInBottomLeft">fadeInBottomLeft</option>
+				
+
+               
+            </select>
+			</div>
+			<div class="col">
+			<select class="box" id="animationDelay" onfocusout="changeAnimation()">
+			    <option value="1">1s</option>
+                <option value="2">2s</option>
+                <option value="3">3s</option>
+                <option value="4">4s</option> 
+				<option value="5">5s</option> 
+
+            </select>
+			</div>
+			<div class="col">
+			<select class="box" id="textFont" onfocusout="changeFontStyle()">
+			    <option value="Georgia,serif">Georgia, serif</option>
+                <option value="verdana,sans-serif">Verdana, sans-serif</option>
+                <option value="Luminari,fantasy">Luminari, fantasy</option>
+                <option value="Helvetica, sans-serif ">Helvetica, sans-serif </option> 
+				<option value="cursive">cursive</option> 
+    
+            </select>
+			</div>
+			</div>
+		 	<div class="row">
+			<!-- edits text size  -->
+           <div class="col">
+			<input class="box" type="number" id="textSize" onclick="changeTextSize()" min="1" max = "74" placeholder = " Text size" <!--style = "width:220px;height:30px;"-->
+			</div>
+			<!-- edits text color  -->
+			 <div class="col">
+			<div class="color">
+			<label id = "tcolor">Text Color </label>
+			<input type="color" onfocusout="changeTextColor()" id="textColor" value="#0d0d0d">
+			</div>
+			</div>
+			<!-- edits background color  -->
+			<div class="col">
+			<div class="color">
+			<label id = "tbcolor">Bg Color &nbsp;</label>
+			<input type="color" onfocusout="ChangeBgColor()" id="backgroundColor" value="#C0C0C0">
+			</div>
+			</div>
+			</div>
+			
+			<div class="row">
+			<!-- saves the state  of text by calling saveStates() function -->
+           <div class="col">
+			<input class="button btn btn-primary" type="button" onclick="saveStates()"  id="save" value="save" name="save">
+			</div>
+			<!-- plays animation by calling playAnimation() function -->
+			<div class="col">
+			<input class="button btn btn-primary" type="button" onclick="playAnimation()" id="play" value="play" name="play">
+			</div>
+			<!-- restarts animation by calling playAnimation() function -->
+			<div class="col">
+			<input class="button btn btn-primary" type="button" onclick="playAnimation()" id="restart" value="restart" name="restart">
+			</div>
+			</div>
+			
+		</form>
+		
+		</div>
+		</div>
+	
+	</body>
+</html>
